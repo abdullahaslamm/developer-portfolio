@@ -36,33 +36,33 @@ const aboutStats = [
 const projects = [
   {
     title: "Unqueue",
-    description: "E-commerce platform for selling digital products",
+    // description: "SAAS Product Animation",
     image: "/assets/unqueue.webm",
-    href: "https://unqueue.shop/",
+    href: "https://depixstudio.com",
   },
   {
     title: "InfiniteVPS",
-    description: "High performance VPS hosting solution",
+    // description: "Product Launch Video",
     image: "/assets/infinitevps.webm",
-    href: "#",
+    href: "https://depixstudio.com",
   },
   {
     title: "TranslateBot",
-    description: "Powerful Multilingual Translation Bot for Discord",
+    // description: "Powerful Multilingual Translation Bot for Discord",
     image: "/assets/translate_bot.webm",
-    href: "https://translatebot.app/",
+    href: "https://depixstudio.com",
   },
   {
     title: "Wrona",
-    description: "Robotics-focused technology company",
-    image: "/assets/wrona.jpeg",
-    href: "https://www.wrona.com/",
+    // description: "Robotics-focused technology company",
+    image: "/assets/wrona.webm",
+    href: "https://depixstudio.com",
   },
   {
     title: "This website",
-    description: "My personal website",
+    // description: "My personal website",
     image: "/assets/portfolio.webm",
-    href: "https://github.com/wendoj/portfolio",
+    href: "https://depixstudio.com",
   },
 ];
 
@@ -80,15 +80,16 @@ const services = [
     icon: Frame,
   },
   {
-    service: "SEO Optimization",
+    service: "Graphic Design",
     description:
-      "Enhancing your website's visibility in search engines for increased organic traffic.",
+      "Creating visually appealing designs for logos, branding, social media, and marketing materials.",
+
     icon: SearchCheck,
   },
   {
-    service: "Responsive Design",
+    service: "Motion Design",
     description:
-      "Designing websites that look and perform equally well on all devices and screen sizes.",
+      "Creating engaging animations and dynamic visual content for videos, websites, and digital media.",
     icon: MonitorSmartphone,
   },
   {
@@ -206,7 +207,7 @@ export default function Home() {
                   <br />
                 </span>
                 <span className="clash-grotesk text-gradient text-6xl 2xl:text-8xl">
-                  WendoJ.
+                  ANNA Turner
                 </span>
               </h1>
               <p
@@ -215,17 +216,17 @@ export default function Home() {
                 data-scroll-speed=".06"
                 className="mt-1 max-w-lg tracking-tight text-muted-foreground 2xl:text-xl"
               >
-                An experienced full-stack website developer with a passion for
-                crafting unique digital experiences.
+                An experienced graphic designer and full-stack website developer
+                with a passion for crafting unique digital experiences.
               </p>
             </div>
             <span
               data-scroll
               data-scroll-enable-touch-speed
               data-scroll-speed=".06"
-              className="flex flex-row items-center space-x-1.5 pt-6"
+              className="flex flex-row items-center space-x-1.5 pt-2"
             >
-              <Link href="mailto:wendoj@proton.me" passHref>
+              <Link href="mailto:annaturnerj@proton.me" passHref>
                 <Button>
                   Get in touch <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
@@ -252,7 +253,7 @@ export default function Home() {
             data-scroll
             data-scroll-speed="-.01"
             id={styles["canvas-container"]}
-            className="mt-14 h-full w-full xl:mt-0"
+            className="mt-10 h-full w-full xl:mt-0"
           >
             <Suspense fallback={<span>Loading...</span>}>
               <Spline scene="/assets/scene.splinecode" />
@@ -266,7 +267,7 @@ export default function Home() {
             data-scroll
             data-scroll-speed=".4"
             data-scroll-position="top"
-            className="my-14 flex max-w-6xl flex-col justify-start space-y-10"
+            className="my-1 flex max-w-6xl flex-col justify-start space-y-10"
           >
             <h2 className="py-16  pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[40px]">
               I&apos;m an experienced full-stack developer proficient in{" "}
@@ -277,11 +278,12 @@ export default function Home() {
               >
                 TypeScript, Tailwind, and Next.js
               </Link>{" "}
-              since 2021. My experience spans from startups to mid-sized
-              companies, where I&apos;ve been instrumental in the entire product
-              design process; from ideation and wireframing, through
-              prototyping, to the delivery of the final product, all while
-              efficiently collaborating with cross-functional teams.
+              Since 2021, I have been working as a graphic designer and website
+              developer. My experience spans startups to mid-sized companies,
+              where I’ve contributed to the entire product creation process—from
+              ideation and wireframing, through prototyping, to delivering the
+              final product—while efficiently collaborating with
+              cross-functional teams.
             </h2>
             <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
               {aboutStats.map((stat) => (
@@ -306,7 +308,7 @@ export default function Home() {
           {/* Gradient */}
           <div className="relative isolate -z-10">
             <div
-              className="absolute inset-x-0 -top-40 transform-gpu overflow-hidden blur-[100px] sm:-top-80 lg:-top-60"
+              className="absolute inset-x-0 -top-10 transform-gpu overflow-hidden blur-[100px] sm:-top-80 lg:-top-60"
               aria-hidden="true"
             >
               <div
@@ -318,20 +320,19 @@ export default function Home() {
               />
             </div>
           </div>
-          <div data-scroll data-scroll-speed=".4" className="my-64">
+          <div data-scroll data-scroll-speed=".4" className="my-8">
             <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
               ✨ Projects
             </span>
             <h2 className="mt-3 text-4xl font-semibold tracking-tight tracking-tighter xl:text-6xl">
-              Streamlined digital experiences.
+              SAAS PRODUCT LAUNCH VIDEO
             </h2>
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              I&apos;ve worked on a variety of projects, from small websites to
-              large-scale web applications. Here are some of my favorites:
+             I create engaging animations and interactive visuals for videos, websites, and digital media. Here are some of my favorite motion design projects:
             </p>
 
             {/* Carousel */}
-            <div className="mt-14">
+            <div className="mt-4">
               <Carousel setApi={setCarouselApi} className="w-full">
                 <CarouselContent>
                   {projects.map((project) => (
@@ -361,7 +362,7 @@ export default function Home() {
                         </CardHeader>
                         <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
                           <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
-                            {project.description}
+                            {/* {project.description} */}
                           </CardTitle>
                         </CardContent>
                       </Card>
@@ -446,7 +447,7 @@ export default function Home() {
               I&apos;m currently available for freelance work and open to
               discussing new projects.
             </p>
-            <Link href="mailto:wendoj@proton.me" passHref>
+            <Link href="mailto:annaturnerj@proton.me" passHref>
               <Button className="mt-6">Get in touch</Button>
             </Link>
           </div>
