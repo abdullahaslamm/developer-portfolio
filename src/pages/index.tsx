@@ -329,19 +329,19 @@ const skeletonProjects = [
 const podcastProjects = [
   {
     title: "podcast 1",
-    image: "/assets/podcast/podcast1.mp4",
+    image: "/assets/podcast/Podcast1.mp4",
   },
   {
     title: "podcast 2",
-    image: "/assets/podcast/podcast2.mp4",
+    image: "/assets/podcast/Podcast2.mp4",
   },
   {
     title: "podcast 3",
-    image: "/assets/podcast/podcast3.mp4",
+    image: "/assets/podcast/Podcast3.mp4",
   },
   {
     title: "podcast 4",
-    image: "/assets/podcast/podcast4.mp4",
+    image: "/assets/podcast/Podcast4.mp4",
   },
 ];
 
