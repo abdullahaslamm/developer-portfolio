@@ -566,7 +566,7 @@ const services = [
 ];
 
 export default function Home() {
-  const refScrollContainer = useRef<HTMLDivElement | null>(null);
+  const refScrollContainer = useRef(null);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
   const [current, setCurrent] = useState<number>(0);
@@ -579,11 +579,8 @@ export default function Home() {
 
     async function getLocomotive() {
       const Locomotive = (await import("locomotive-scroll")).default;
-
-      if (!refScrollContainer.current) return;
-
       new Locomotive({
-        el: refScrollContainer.current,
+        el: refScrollContainer.current ?? new HTMLElement(),
         smooth: true,
       });
     }
@@ -820,18 +817,9 @@ export default function Home() {
                           {project.image.endsWith(".webm") ? (
                             <video
                               src={project.image}
+                              autoPlay
                               loop
                               muted
-                              onMouseEnter={(e) => void e.currentTarget.play()}
-                              onMouseLeave={(e) => e.currentTarget.pause()}
-                              onClick={(e) => {
-                                const video = e.currentTarget;
-                                if (video.paused) {
-                                  void video.play();
-                                } else {
-                                  video.pause();
-                                }
-                              }}
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
@@ -885,18 +873,9 @@ export default function Home() {
                           {project.image.endsWith(".webm") ? (
                             <video
                               src={project.image}
+                              autoPlay
                               loop
                               muted
-                              onMouseEnter={(e) => void e.currentTarget.play()}
-                              onMouseLeave={(e) => e.currentTarget.pause()}
-                              onClick={(e) => {
-                                const video = e.currentTarget;
-                                if (video.paused) {
-                                  void video.play();
-                                } else {
-                                  video.pause();
-                                }
-                              }}
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
@@ -987,13 +966,13 @@ export default function Home() {
               </div>
             </div>
 
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight tracking-tighter xl:text-4xl">
+             <h2 className="mt-3 text-2xl font-semibold tracking-tight tracking-tighter xl:text-4xl">
               IRL Vlog Videos
             </h2>
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              create engaging and high-impact IRL vlog videos that tell
-              compelling stories and enhance digital media presence. Here are
-              some of my favorite IRL vlog projects.
+              create engaging and high-impact IRL vlog videos that
+              tell compelling stories and enhance digital media presence. Here
+              are some of my favorite IRL vlog projects.
             </p>
             <div className="mt-4">
               <Carousel setApi={setCarouselApi} className="w-full">
@@ -1006,20 +985,9 @@ export default function Home() {
                             {project.image.endsWith(".mp4") ? (
                               <video
                                 src={project.image}
+                                autoPlay
                                 loop
                                 muted
-                                onMouseEnter={(e) =>
-                                  void e.currentTarget.play()
-                                }
-                                onMouseLeave={(e) => e.currentTarget.pause()}
-                                onClick={(e) => {
-                                  const video = e.currentTarget;
-                                  if (video.paused) {
-                                    void video.play();
-                                  } else {
-                                    video.pause();
-                                  }
-                                }}
                                 className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                               />
                             ) : (
@@ -1073,18 +1041,9 @@ export default function Home() {
                           {project.image.endsWith(".webm") ? (
                             <video
                               src={project.image}
+                              autoPlay
                               loop
                               muted
-                              onMouseEnter={(e) => void e.currentTarget.play()}
-                              onMouseLeave={(e) => e.currentTarget.pause()}
-                              onClick={(e) => {
-                                const video = e.currentTarget;
-                                if (video.paused) {
-                                  void video.play();
-                                } else {
-                                  video.pause();
-                                }
-                              }}
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
@@ -1139,18 +1098,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
+                              autoPlay
                               loop
                               muted
-                              onMouseEnter={(e) => void e.currentTarget.play()}
-                              onMouseLeave={(e) => e.currentTarget.pause()}
-                              onClick={(e) => {
-                                const video = e.currentTarget;
-                                if (video.paused) {
-                                  void video.play();
-                                } else {
-                                  video.pause();
-                                }
-                              }}
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
@@ -1208,18 +1158,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
+                              autoPlay
                               loop
                               muted
-                              onMouseEnter={(e) => void e.currentTarget.play()}
-                              onMouseLeave={(e) => e.currentTarget.pause()}
-                              onClick={(e) => {
-                                const video = e.currentTarget;
-                                if (video.paused) {
-                                  void video.play();
-                                } else {
-                                  video.pause();
-                                }
-                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1229,7 +1170,7 @@ export default function Home() {
                               width={600}
                               height={300}
                               quality={100}
-                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           )}
                         </CardHeader>
@@ -1270,18 +1211,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
+                              autoPlay
                               loop
                               muted
-                              onMouseEnter={(e) => void e.currentTarget.play()}
-                              onMouseLeave={(e) => e.currentTarget.pause()}
-                              onClick={(e) => {
-                                const video = e.currentTarget;
-                                if (video.paused) {
-                                  void video.play();
-                                } else {
-                                  video.pause();
-                                }
-                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1291,7 +1223,7 @@ export default function Home() {
                               width={600}
                               height={300}
                               quality={100}
-                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           )}
                         </CardHeader>
@@ -1332,18 +1264,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
+                              autoPlay
                               loop
                               muted
-                              onMouseEnter={(e) => void e.currentTarget.play()}
-                              onMouseLeave={(e) => e.currentTarget.pause()}
-                              onClick={(e) => {
-                                const video = e.currentTarget;
-                                if (video.paused) {
-                                  void video.play();
-                                } else {
-                                  video.pause();
-                                }
-                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1353,7 +1276,7 @@ export default function Home() {
                               width={600}
                               height={300}
                               quality={100}
-                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           )}
                         </CardHeader>
@@ -1393,18 +1316,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
+                              autoPlay
                               loop
                               muted
-                              onMouseEnter={(e) => void e.currentTarget.play()}
-                              onMouseLeave={(e) => e.currentTarget.pause()}
-                              onClick={(e) => {
-                                const video = e.currentTarget;
-                                if (video.paused) {
-                                  void video.play();
-                                } else {
-                                  video.pause();
-                                }
-                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1414,7 +1328,7 @@ export default function Home() {
                               width={600}
                               height={300}
                               quality={100}
-                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           )}
                         </CardHeader>
@@ -1454,18 +1368,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
+                              autoPlay
                               loop
                               muted
-                              onMouseEnter={(e) => void e.currentTarget.play()}
-                              onMouseLeave={(e) => e.currentTarget.pause()}
-                              onClick={(e) => {
-                                const video = e.currentTarget;
-                                if (video.paused) {
-                                  void video.play();
-                                } else {
-                                  video.pause();
-                                }
-                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1475,7 +1380,7 @@ export default function Home() {
                               width={600}
                               height={300}
                               quality={100}
-                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           )}
                         </CardHeader>
@@ -1515,18 +1420,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
+                              autoPlay
                               loop
                               muted
-                              onMouseEnter={(e) => void e.currentTarget.play()}
-                              onMouseLeave={(e) => e.currentTarget.pause()}
-                              onClick={(e) => {
-                                const video = e.currentTarget;
-                                if (video.paused) {
-                                  void video.play();
-                                } else {
-                                  video.pause();
-                                }
-                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1536,7 +1432,7 @@ export default function Home() {
                               width={600}
                               height={300}
                               quality={100}
-                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           )}
                         </CardHeader>
@@ -1576,18 +1472,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
+                              autoPlay
                               loop
                               muted
-                              onMouseEnter={(e) => void e.currentTarget.play()}
-                              onMouseLeave={(e) => e.currentTarget.pause()}
-                              onClick={(e) => {
-                                const video = e.currentTarget;
-                                if (video.paused) {
-                                  void video.play();
-                                } else {
-                                  video.pause();
-                                }
-                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1597,7 +1484,7 @@ export default function Home() {
                               width={600}
                               height={300}
                               quality={100}
-                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           )}
                         </CardHeader>
@@ -1641,18 +1528,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
+                              autoPlay
                               loop
                               muted
-                              onMouseEnter={(e) => void e.currentTarget.play()}
-                              onMouseLeave={(e) => e.currentTarget.pause()}
-                              onClick={(e) => {
-                                const video = e.currentTarget;
-                                if (video.paused) {
-                                  void video.play();
-                                } else {
-                                  video.pause();
-                                }
-                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1662,7 +1540,7 @@ export default function Home() {
                               width={600}
                               height={300}
                               quality={100}
-                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           )}
                         </CardHeader>
@@ -1702,18 +1580,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
+                              autoPlay
                               loop
                               muted
-                              onMouseEnter={(e) => void e.currentTarget.play()}
-                              onMouseLeave={(e) => e.currentTarget.pause()}
-                              onClick={(e) => {
-                                const video = e.currentTarget;
-                                if (video.paused) {
-                                  void video.play();
-                                } else {
-                                  video.pause();
-                                }
-                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1723,7 +1592,7 @@ export default function Home() {
                               width={600}
                               height={300}
                               quality={100}
-                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           )}
                         </CardHeader>
@@ -1764,18 +1633,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
+                              autoPlay
                               loop
                               muted
-                              onMouseEnter={(e) => void e.currentTarget.play()}
-                              onMouseLeave={(e) => e.currentTarget.pause()}
-                              onClick={(e) => {
-                                const video = e.currentTarget;
-                                if (video.paused) {
-                                  void video.play();
-                                } else {
-                                  video.pause();
-                                }
-                              }}
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
@@ -1828,18 +1688,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
+                              autoPlay
                               loop
                               muted
-                              onMouseEnter={(e) => void e.currentTarget.play()}
-                              onMouseLeave={(e) => e.currentTarget.pause()}
-                              onClick={(e) => {
-                                const video = e.currentTarget;
-                                if (video.paused) {
-                                  void video.play();
-                                } else {
-                                  video.pause();
-                                }
-                              }}
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
