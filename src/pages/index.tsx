@@ -817,9 +817,9 @@ export default function Home() {
                           {project.image.endsWith(".webm") ? (
                             <video
                               src={project.image}
-                              autoPlay
-                              loop
                               muted
+                              controls
+                              preload="none"
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
@@ -873,9 +873,9 @@ export default function Home() {
                           {project.image.endsWith(".webm") ? (
                             <video
                               src={project.image}
-                              autoPlay
-                              loop
                               muted
+                              controls
+                              preload="none"
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
@@ -966,13 +966,13 @@ export default function Home() {
               </div>
             </div>
 
-             <h2 className="mt-3 text-2xl font-semibold tracking-tight tracking-tighter xl:text-4xl">
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight tracking-tighter xl:text-4xl">
               IRL Vlog Videos
             </h2>
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              create engaging and high-impact IRL vlog videos that
-              tell compelling stories and enhance digital media presence. Here
-              are some of my favorite IRL vlog projects.
+              create engaging and high-impact IRL vlog videos that tell
+              compelling stories and enhance digital media presence. Here are
+              some of my favorite IRL vlog projects.
             </p>
             <div className="mt-4">
               <Carousel setApi={setCarouselApi} className="w-full">
@@ -985,9 +985,9 @@ export default function Home() {
                             {project.image.endsWith(".mp4") ? (
                               <video
                                 src={project.image}
-                                autoPlay
-                                loop
-                                muted
+                               muted
+                              controls
+                              preload="none"
                                 className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                               />
                             ) : (
@@ -1041,9 +1041,9 @@ export default function Home() {
                           {project.image.endsWith(".webm") ? (
                             <video
                               src={project.image}
-                              autoPlay
-                              loop
                               muted
+                              controls
+                              preload="none"
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
@@ -1098,9 +1098,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
-                              autoPlay
-                              loop
                               muted
+                              controls
+                              preload="none"
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
@@ -1158,9 +1158,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
-                              autoPlay
-                              loop
                               muted
+                              controls
+                              preload="none"
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1211,9 +1211,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
-                              autoPlay
-                              loop
                               muted
+                              controls
+                              preload="none"
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1264,9 +1264,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
-                              autoPlay
-                              loop
                               muted
+                              controls
+                              preload="none"
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1316,9 +1316,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
-                              autoPlay
-                              loop
                               muted
+                              controls
+                              preload="none"
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1368,9 +1368,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
-                              autoPlay
-                              loop
                               muted
+                              controls
+                              preload="none"
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1420,9 +1420,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
-                              autoPlay
-                              loop
-                              muted
+                             muted
+                              controls
+                              preload="none"
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1472,9 +1472,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
-                              autoPlay
-                              loop
                               muted
+                              controls
+                              preload="none"
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1528,9 +1528,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
-                              autoPlay
-                              loop
                               muted
+                              controls
+                              preload="none"
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1580,9 +1580,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
-                              autoPlay
-                              loop
                               muted
+                              controls
+                              preload="none"
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1633,9 +1633,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
-                              autoPlay
-                              loop
                               muted
+                              controls
+                              preload="none"
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
@@ -1688,9 +1688,9 @@ export default function Home() {
                           {project.image.endsWith(".mp4") ? (
                             <video
                               src={project.image}
-                              autoPlay
-                              loop
                               muted
+                              controls
+                              preload="none"
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
