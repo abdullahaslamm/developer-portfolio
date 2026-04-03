@@ -819,7 +819,11 @@ export default function Home() {
                               src={project.image}
                               muted
                               controls
-                              preload="none"
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
@@ -875,7 +879,11 @@ export default function Home() {
                               src={project.image}
                               muted
                               controls
-                              preload="none"
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
@@ -927,13 +935,17 @@ export default function Home() {
                         <CardHeader className="p-0">
                           <Link href={project.href} target="_blank" passHref>
                             {project.image.endsWith(".webm") ? (
-                              <video
-                                src={project.image}
-                                autoPlay
-                                loop
-                                muted
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
+                               <video
+                              src={project.image}
+                              muted
+                              controls
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                            />
                             ) : (
                               <Image
                                 src={project.image}
@@ -983,13 +995,17 @@ export default function Home() {
                         <CardHeader className="p-0">
                           <Link href={project.href} target="_blank" passHref>
                             {project.image.endsWith(".mp4") ? (
-                              <video
-                                src={project.image}
-                               muted
+                               <video
+                              src={project.image}
+                              muted
                               controls
-                              preload="none"
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                            />
                             ) : (
                               <Image
                                 src={project.image}
@@ -1039,11 +1055,15 @@ export default function Home() {
                         <CardHeader className="p-0">
                           {/* <Link href={project.href} target="_blank" passHref> */}
                           {project.image.endsWith(".webm") ? (
-                            <video
+                             <video
                               src={project.image}
                               muted
                               controls
-                              preload="none"
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
@@ -1096,11 +1116,15 @@ export default function Home() {
                         <CardHeader className="p-0">
                           {/* <Link href={project.href} target="_blank" passHref> */}
                           {project.image.endsWith(".mp4") ? (
-                            <video
+                             <video
                               src={project.image}
                               muted
                               controls
-                              preload="none"
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
@@ -1156,11 +1180,15 @@ export default function Home() {
                       <Card id="title">
                         <CardHeader className="p-6">
                           {project.image.endsWith(".mp4") ? (
-                            <video
+                              <video
                               src={project.image}
                               muted
                               controls
-                              preload="none"
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1209,11 +1237,15 @@ export default function Home() {
                       <Card id="title">
                         <CardHeader className="p-6">
                           {project.image.endsWith(".mp4") ? (
-                            <video
+                              <video
                               src={project.image}
                               muted
                               controls
-                              preload="none"
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1266,7 +1298,11 @@ export default function Home() {
                               src={project.image}
                               muted
                               controls
-                              preload="none"
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1314,11 +1350,15 @@ export default function Home() {
                       <Card id="title">
                         <CardHeader className="p-6">
                           {project.image.endsWith(".mp4") ? (
-                            <video
+                             <video
                               src={project.image}
                               muted
                               controls
-                              preload="none"
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1366,11 +1406,15 @@ export default function Home() {
                       <Card id="title">
                         <CardHeader className="p-6">
                           {project.image.endsWith(".mp4") ? (
-                            <video
+                             <video
                               src={project.image}
                               muted
                               controls
-                              preload="none"
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1418,11 +1462,15 @@ export default function Home() {
                       <Card id="title">
                         <CardHeader className="p-6">
                           {project.image.endsWith(".mp4") ? (
-                            <video
+                             <video
                               src={project.image}
-                             muted
+                              muted
                               controls
-                              preload="none"
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1474,7 +1522,11 @@ export default function Home() {
                               src={project.image}
                               muted
                               controls
-                              preload="none"
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1530,7 +1582,11 @@ export default function Home() {
                               src={project.image}
                               muted
                               controls
-                              preload="none"
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1582,7 +1638,11 @@ export default function Home() {
                               src={project.image}
                               muted
                               controls
-                              preload="none"
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           ) : (
@@ -1635,7 +1695,11 @@ export default function Home() {
                               src={project.image}
                               muted
                               controls
-                              preload="none"
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
@@ -1690,7 +1754,11 @@ export default function Home() {
                               src={project.image}
                               muted
                               controls
-                              preload="none"
+                              preload="metadata"
+                              onLoadedData={(e) => {
+                                const video = e.currentTarget;
+                                video.currentTime = 0.5; 
+                              }}
                               className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                             />
                           ) : (
