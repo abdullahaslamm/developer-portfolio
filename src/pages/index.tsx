@@ -566,7 +566,7 @@ const services = [
 ];
 
 export default function Home() {
-  const refScrollContainer = useRef(null);
+  const refScrollContainer = useRef<HTMLDivElement | null>(null);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
   const [current, setCurrent] = useState<number>(0);
@@ -579,8 +579,11 @@ export default function Home() {
 
     async function getLocomotive() {
       const Locomotive = (await import("locomotive-scroll")).default;
+
+      if (!refScrollContainer.current) return;
+
       new Locomotive({
-        el: refScrollContainer.current ?? new HTMLElement(),
+        el: refScrollContainer.current,
         smooth: true,
       });
     }
@@ -816,21 +819,21 @@ export default function Home() {
                           {/* <Link href={project.href} target="_blank" passHref> */}
                           {project.image.endsWith(".webm") ? (
                             <video
-                                src={project.image}
-                                loop
-                                muted
-                                onMouseEnter={(e) => e.currentTarget.play()}
-                                onMouseLeave={(e) => e.currentTarget.pause()}
-                                onClick={(e) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }}
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
+                              src={project.image}
+                              loop
+                              muted
+                              onMouseEnter={(e) => void e.currentTarget.play()}
+                              onMouseLeave={(e) => e.currentTarget.pause()}
+                              onClick={(e) => {
+                                const video = e.currentTarget;
+                                if (video.paused) {
+                                  void video.play();
+                                } else {
+                                  video.pause();
+                                }
+                              }}
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                            />
                           ) : (
                             <Image
                               src={project.image}
@@ -881,21 +884,21 @@ export default function Home() {
                           {/* <Link href={project.href} target="_blank" passHref> */}
                           {project.image.endsWith(".webm") ? (
                             <video
-                                src={project.image}
-                                loop
-                                muted
-                                onMouseEnter={(e) => e.currentTarget.play()}
-                                onMouseLeave={(e) => e.currentTarget.pause()}
-                                onClick={(e) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }}
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
+                              src={project.image}
+                              loop
+                              muted
+                              onMouseEnter={(e) => void e.currentTarget.play()}
+                              onMouseLeave={(e) => e.currentTarget.pause()}
+                              onClick={(e) => {
+                                const video = e.currentTarget;
+                                if (video.paused) {
+                                  void video.play();
+                                } else {
+                                  video.pause();
+                                }
+                              }}
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                            />
                           ) : (
                             <Image
                               src={project.image}
@@ -1005,16 +1008,18 @@ export default function Home() {
                                 src={project.image}
                                 loop
                                 muted
-                                onMouseEnter={(e) => e.currentTarget.play()}
+                                onMouseEnter={(e) =>
+                                  void e.currentTarget.play()
+                                }
                                 onMouseLeave={(e) => e.currentTarget.pause()}
                                 onClick={(e) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }}
+                                  const video = e.currentTarget;
+                                  if (video.paused) {
+                                    void video.play();
+                                  } else {
+                                    video.pause();
+                                  }
+                                }}
                                 className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                               />
                             ) : (
@@ -1066,22 +1071,22 @@ export default function Home() {
                         <CardHeader className="p-0">
                           {/* <Link href={project.href} target="_blank" passHref> */}
                           {project.image.endsWith(".webm") ? (
-                           <video
-                                src={project.image}
-                                loop
-                                muted
-                                onMouseEnter={(e) => e.currentTarget.play()}
-                                onMouseLeave={(e) => e.currentTarget.pause()}
-                                onClick={(e) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }}
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
+                            <video
+                              src={project.image}
+                              loop
+                              muted
+                              onMouseEnter={(e) => void e.currentTarget.play()}
+                              onMouseLeave={(e) => e.currentTarget.pause()}
+                              onClick={(e) => {
+                                const video = e.currentTarget;
+                                if (video.paused) {
+                                  void video.play();
+                                } else {
+                                  video.pause();
+                                }
+                              }}
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                            />
                           ) : (
                             <Image
                               src={project.image}
@@ -1133,21 +1138,21 @@ export default function Home() {
                           {/* <Link href={project.href} target="_blank" passHref> */}
                           {project.image.endsWith(".mp4") ? (
                             <video
-                                src={project.image}
-                                loop
-                                muted
-                                onMouseEnter={(e) => e.currentTarget.play()}
-                                onMouseLeave={(e) => e.currentTarget.pause()}
-                                onClick={(e) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }}
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
+                              src={project.image}
+                              loop
+                              muted
+                              onMouseEnter={(e) => void e.currentTarget.play()}
+                              onMouseLeave={(e) => e.currentTarget.pause()}
+                              onClick={(e) => {
+                                const video = e.currentTarget;
+                                if (video.paused) {
+                                  void video.play();
+                                } else {
+                                  video.pause();
+                                }
+                              }}
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                            />
                           ) : (
                             <Image
                               src={project.image}
@@ -1202,21 +1207,21 @@ export default function Home() {
                         <CardHeader className="p-6">
                           {project.image.endsWith(".mp4") ? (
                             <video
-                                src={project.image}
-                                loop
-                                muted
-                                onMouseEnter={(e) => e.currentTarget.play()}
-                                onMouseLeave={(e) => e.currentTarget.pause()}
-                                onClick={(e) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }}
-                                className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
-                              />
+                              src={project.image}
+                              loop
+                              muted
+                              onMouseEnter={(e) => void e.currentTarget.play()}
+                              onMouseLeave={(e) => e.currentTarget.pause()}
+                              onClick={(e) => {
+                                const video = e.currentTarget;
+                                if (video.paused) {
+                                  void video.play();
+                                } else {
+                                  video.pause();
+                                }
+                              }}
+                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                            />
                           ) : (
                             <Image
                               src={project.image}
@@ -1263,22 +1268,22 @@ export default function Home() {
                       <Card id="title">
                         <CardHeader className="p-6">
                           {project.image.endsWith(".mp4") ? (
-                           <video
-                                src={project.image}
-                                loop
-                                muted
-                                onMouseEnter={(e) => e.currentTarget.play()}
-                                onMouseLeave={(e) => e.currentTarget.pause()}
-                                onClick={(e) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }}
-                                className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
-                              />
+                            <video
+                              src={project.image}
+                              loop
+                              muted
+                              onMouseEnter={(e) => void e.currentTarget.play()}
+                              onMouseLeave={(e) => e.currentTarget.pause()}
+                              onClick={(e) => {
+                                const video = e.currentTarget;
+                                if (video.paused) {
+                                  void video.play();
+                                } else {
+                                  video.pause();
+                                }
+                              }}
+                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                            />
                           ) : (
                             <Image
                               src={project.image}
@@ -1326,21 +1331,21 @@ export default function Home() {
                         <CardHeader className="p-6">
                           {project.image.endsWith(".mp4") ? (
                             <video
-                                src={project.image}
-                                loop
-                                muted
-                                onMouseEnter={(e) => e.currentTarget.play()}
-                                onMouseLeave={(e) => e.currentTarget.pause()}
-                                onClick={(e) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }}
-                                className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
-                              />
+                              src={project.image}
+                              loop
+                              muted
+                              onMouseEnter={(e) => void e.currentTarget.play()}
+                              onMouseLeave={(e) => e.currentTarget.pause()}
+                              onClick={(e) => {
+                                const video = e.currentTarget;
+                                if (video.paused) {
+                                  void video.play();
+                                } else {
+                                  video.pause();
+                                }
+                              }}
+                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                            />
                           ) : (
                             <Image
                               src={project.image}
@@ -1387,21 +1392,21 @@ export default function Home() {
                         <CardHeader className="p-6">
                           {project.image.endsWith(".mp4") ? (
                             <video
-                                src={project.image}
-                                loop
-                                muted
-                                onMouseEnter={(e) => e.currentTarget.play()}
-                                onMouseLeave={(e) => e.currentTarget.pause()}
-                                onClick={(e) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }}
-                                className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
-                              />
+                              src={project.image}
+                              loop
+                              muted
+                              onMouseEnter={(e) => void e.currentTarget.play()}
+                              onMouseLeave={(e) => e.currentTarget.pause()}
+                              onClick={(e) => {
+                                const video = e.currentTarget;
+                                if (video.paused) {
+                                  void video.play();
+                                } else {
+                                  video.pause();
+                                }
+                              }}
+                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                            />
                           ) : (
                             <Image
                               src={project.image}
@@ -1448,21 +1453,21 @@ export default function Home() {
                         <CardHeader className="p-6">
                           {project.image.endsWith(".mp4") ? (
                             <video
-                                src={project.image}
-                                loop
-                                muted
-                                onMouseEnter={(e) => e.currentTarget.play()}
-                                onMouseLeave={(e) => e.currentTarget.pause()}
-                                onClick={(e) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }}
-                                className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
-                              />
+                              src={project.image}
+                              loop
+                              muted
+                              onMouseEnter={(e) => void e.currentTarget.play()}
+                              onMouseLeave={(e) => e.currentTarget.pause()}
+                              onClick={(e) => {
+                                const video = e.currentTarget;
+                                if (video.paused) {
+                                  void video.play();
+                                } else {
+                                  video.pause();
+                                }
+                              }}
+                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                            />
                           ) : (
                             <Image
                               src={project.image}
@@ -1508,22 +1513,22 @@ export default function Home() {
                       <Card id="title">
                         <CardHeader className="p-6">
                           {project.image.endsWith(".mp4") ? (
-                           <video
-                                src={project.image}
-                                loop
-                                muted
-                                onMouseEnter={(e) => e.currentTarget.play()}
-                                onMouseLeave={(e) => e.currentTarget.pause()}
-                                onClick={(e) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }}
-                                className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
-                              />
+                            <video
+                              src={project.image}
+                              loop
+                              muted
+                              onMouseEnter={(e) => void e.currentTarget.play()}
+                              onMouseLeave={(e) => e.currentTarget.pause()}
+                              onClick={(e) => {
+                                const video = e.currentTarget;
+                                if (video.paused) {
+                                  void video.play();
+                                } else {
+                                  video.pause();
+                                }
+                              }}
+                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                            />
                           ) : (
                             <Image
                               src={project.image}
@@ -1569,22 +1574,22 @@ export default function Home() {
                       <Card id="title">
                         <CardHeader className="p-6">
                           {project.image.endsWith(".mp4") ? (
-                           <video
-                                src={project.image}
-                                loop
-                                muted
-                                onMouseEnter={(e) => e.currentTarget.play()}
-                                onMouseLeave={(e) => e.currentTarget.pause()}
-                                onClick={(e) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }}
-                                className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
-                              />
+                            <video
+                              src={project.image}
+                              loop
+                              muted
+                              onMouseEnter={(e) => void e.currentTarget.play()}
+                              onMouseLeave={(e) => e.currentTarget.pause()}
+                              onClick={(e) => {
+                                const video = e.currentTarget;
+                                if (video.paused) {
+                                  void video.play();
+                                } else {
+                                  video.pause();
+                                }
+                              }}
+                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                            />
                           ) : (
                             <Image
                               src={project.image}
@@ -1635,21 +1640,21 @@ export default function Home() {
                         <CardHeader className="p-6">
                           {project.image.endsWith(".mp4") ? (
                             <video
-                                src={project.image}
-                                loop
-                                muted
-                                onMouseEnter={(e) => e.currentTarget.play()}
-                                onMouseLeave={(e) => e.currentTarget.pause()}
-                                onClick={(e) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }}
-                                className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
-                              />
+                              src={project.image}
+                              loop
+                              muted
+                              onMouseEnter={(e) => void e.currentTarget.play()}
+                              onMouseLeave={(e) => e.currentTarget.pause()}
+                              onClick={(e) => {
+                                const video = e.currentTarget;
+                                if (video.paused) {
+                                  void video.play();
+                                } else {
+                                  video.pause();
+                                }
+                              }}
+                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                            />
                           ) : (
                             <Image
                               src={project.image}
@@ -1696,21 +1701,21 @@ export default function Home() {
                         <CardHeader className="p-6">
                           {project.image.endsWith(".mp4") ? (
                             <video
-                                src={project.image}
-                                loop
-                                muted
-                                onMouseEnter={(e) => e.currentTarget.play()}
-                                onMouseLeave={(e) => e.currentTarget.pause()}
-                                onClick={(e) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }}
-                               className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
-                              />
+                              src={project.image}
+                              loop
+                              muted
+                              onMouseEnter={(e) => void e.currentTarget.play()}
+                              onMouseLeave={(e) => e.currentTarget.pause()}
+                              onClick={(e) => {
+                                const video = e.currentTarget;
+                                if (video.paused) {
+                                  void video.play();
+                                } else {
+                                  video.pause();
+                                }
+                              }}
+                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                            />
                           ) : (
                             <Image
                               src={project.image}
@@ -1718,7 +1723,7 @@ export default function Home() {
                               width={600}
                               height={300}
                               quality={100}
-                             className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
+                              className="h-[500px] w-[280px] rounded-md bg-primary object-cover"
                             />
                           )}
                         </CardHeader>
@@ -1757,22 +1762,22 @@ export default function Home() {
                         <CardHeader className="p-0">
                           {/* <Link href={project.href} target="_blank" passHref> */}
                           {project.image.endsWith(".mp4") ? (
-                           <video
-                                src={project.image}
-                                loop
-                                muted
-                                onMouseEnter={(e) => e.currentTarget.play()}
-                                onMouseLeave={(e) => e.currentTarget.pause()}
-                                onClick={(e) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }}
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
+                            <video
+                              src={project.image}
+                              loop
+                              muted
+                              onMouseEnter={(e) => void e.currentTarget.play()}
+                              onMouseLeave={(e) => e.currentTarget.pause()}
+                              onClick={(e) => {
+                                const video = e.currentTarget;
+                                if (video.paused) {
+                                  void video.play();
+                                } else {
+                                  video.pause();
+                                }
+                              }}
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                            />
                           ) : (
                             <Image
                               src={project.image}
@@ -1822,21 +1827,21 @@ export default function Home() {
                         <CardHeader className="p-0">
                           {project.image.endsWith(".mp4") ? (
                             <video
-                                src={project.image}
-                                loop
-                                muted
-                                onMouseEnter={(e) => e.currentTarget.play()}
-                                onMouseLeave={(e) => e.currentTarget.pause()}
-                                onClick={(e) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }}
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
+                              src={project.image}
+                              loop
+                              muted
+                              onMouseEnter={(e) => void e.currentTarget.play()}
+                              onMouseLeave={(e) => e.currentTarget.pause()}
+                              onClick={(e) => {
+                                const video = e.currentTarget;
+                                if (video.paused) {
+                                  void video.play();
+                                } else {
+                                  video.pause();
+                                }
+                              }}
+                              className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                            />
                           ) : (
                             <Image
                               src={project.image}
