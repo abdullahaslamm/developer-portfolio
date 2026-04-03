@@ -53,12 +53,10 @@ function handleClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
     const section = document.querySelector(href);
 
     if (section) {
-      const offset = 90; 
+      const offset = 90;
 
       const y =
-        section.getBoundingClientRect().top +
-        window.pageYOffset -
-        offset;
+        section.getBoundingClientRect().top + window.pageYOffset - offset;
 
       window.scrollTo({
         top: y,
@@ -98,7 +96,7 @@ export default function Container(props: ContainerProps) {
   const router = useRouter();
   const meta = {
     title: "ANNA TURNER",
-    description: `Full-stack website developer and TypeScript enthusiast.`,
+    description: `Creative video editor and website developer specializing in engaging visuals and modern web experiences.`,
     image: "/assets/logo.webp",
     type: "website",
     ...customMeta,
@@ -235,7 +233,8 @@ export default function Container(props: ContainerProps) {
                 {/* Footer */}
                 <div className="flex min-h-fit w-full flex-col space-y-8 px-[22px] py-10">
                   <span className="text-sm text-muted-foreground">
-                    © {new Date().getFullYear()} anna turner. All rights reserved.
+                    © {new Date().getFullYear()} anna turner. All rights
+                    reserved.
                   </span>
                 </div>
               </div>
