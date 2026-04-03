@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { MailIcon } from "lucide-react";
+import discord from "@/assets/discord.svg";
 
 export default function Footer() {
   // get the current time in UTC+1 time zone
@@ -29,7 +30,7 @@ export default function Footer() {
           <p className="text-xs text-muted-foreground">
             Made with ❤️ by{" "}
             <Link
-              href="https://github.com/AnnaTurner"
+              href="https://discord.com/users/428013748847116289"
               target="_blank"
               passHref
               className="text-foreground transition hover:text-primary"
@@ -43,6 +44,16 @@ export default function Footer() {
             <p className="text-sm font-semibold">{time} UTC+1</p>
           </span>
         </span>
+        <Link
+          href="https://discord.com/users/428013748847116289"
+          passHref
+          className="text-xs text-muted-foreground hover:text-foreground"
+        >
+          <Button variant={"outline"}>
+            <img src="/assets/discord.svg" className="h-4 w-4 md:mr-2" />
+            <span className="hidden md:flex">Anna Turner</span>
+          </Button>
+        </Link>
         <Link
           href="mailto:annaturner@depixstudio.com"
           passHref

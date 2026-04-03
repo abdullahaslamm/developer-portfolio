@@ -185,38 +185,32 @@ const gamingProjects = [
   },
 ];
 
-// const vlogProjects = [
-//   {
-//     title: "Vlog 1",
-//     // description: "SAAS Product Animation",
-//     image: "/assets/vlog/vlog1.mp4",
-//     href: "https://drive.google.com/file/d/1HARcVoy0ZTkXp0_xDi56XvJe9Lbuz2qm/view?usp=drive_link",
-//   },
-//   {
-//     title: "Vlog 2",
-//     // description: "Product Launch Video",
-//     image: "/assets/vlog/vlog2.mp4",
-//     href: "https://drive.google.com/file/d/1Ri74RINJrpKc0EkT2S7yA0ujoHY8TnLQ/view?usp=drive_link",
-//   },
-//   {
-//     title: "Vlog 3",
-//     // description: "Powerful Multilingual Translation Bot for Discord",
-//     image: "/assets/vlog/vlog3.mp4",
-//     href: "https://drive.google.com/file/d/1wAh1JfTmMgeQwS08MU-WUCTYMBItMSOU/view?usp=drive_link",
-//   },
-//   {
-//     title: "Vlog 4",
-//     // description: "Robotics-focused technology company",
-//     image: "/assets/vlog/vlog4.mp4",
-//     href: "https://drive.google.com/file/d/1MJQb3xhedXEVUxby6YBAqA8MMYykfO-3/view?usp=drive_link",
-//   },
-//   // {
-//   //   title: "This website",
-//   //   // description: "My personal website",
-//   //   image: "/assets/vlog/vlog5.mp4",
-//   //   href: "https://drive.google.com/file/d/1s77g63i1k8OsJEhrzu1jZ5XTR1PQiwiC/view?usp=drive_link",
-//   // },
-// ];
+const vlogProjects = [
+  {
+    title: "Vlog 1",
+    description: "Click for Full Video",
+    image: "/assets/vlog/vlog1.mp4",
+    href: "https://drive.google.com/file/d/1S7K2UITlYxcwwMEayHdhElUkqBN-mOJ1/view?usp=drive_link",
+  },
+  {
+    title: "Vlog 2",
+    description: "Click for Full Video",
+    image: "/assets/vlog/vlog2.mp4",
+    href: "https://drive.google.com/file/d/1JjanzvCgfhAD7ymvzPxeXhLaqV4leIS8/view?usp=drive_link",
+  },
+  {
+    title: "Vlog 3",
+    description: "Click for Full Video",
+    image: "/assets/vlog/vlog3.mp4",
+    href: "https://drive.google.com/file/d/1jNgS2VZ1AjPAitIbb2hpkaboksHAQenl/view?usp=drive_link",
+  },
+  {
+    title: "Vlog 4",
+    description: "Click for Full Video",
+    image: "/assets/vlog/vlog4.mp4",
+    href: "https://drive.google.com/file/d/1XenK_NjNOuQIEKnbKE7O38l6FZT9Pdzr/view?usp=drive_link",
+  },
+];
 
 const talkingHeadProjects = [
   {
@@ -539,10 +533,11 @@ const thumbnailProjects = [
 
 const services = [
   {
-    service: "Frontend Development",
+    service: "Video Editing",
     description:
-      "Creating stellar user interfaces and web experiences using the latest technologies.",
-    icon: Code2,
+      "Creating visually appealing designs for logos, branding, social media, and marketing materials.",
+
+    icon: ApertureIcon,
   },
   {
     service: "UI/UX Design",
@@ -551,17 +546,16 @@ const services = [
     icon: Frame,
   },
   {
-    service: "Graphic Design",
-    description:
-      "Creating visually appealing designs for logos, branding, social media, and marketing materials.",
-
-    icon: ApertureIcon,
-  },
-  {
-    service: "Motion Design",
+    service: "2D Animation",
     description:
       "Creating engaging animations and dynamic visual content for videos, websites, and digital media.",
     icon: MonitorSmartphone,
+  },
+  {
+    service: "Frontend Development",
+    description:
+      "Creating stellar user interfaces and web experiences using the latest technologies.",
+    icon: Code2,
   },
   {
     service: "Backend Development",
@@ -662,11 +656,12 @@ export default function Home() {
               data-scroll-speed=".09"
               className="flex flex-row items-center space-x-1.5"
             >
-              <span className={styles.pill}>next.js</span>
-              <span className={styles.pill}>tailwindcss</span>
-              <span className={styles.pill}>typescript</span>
               <span className={styles.pill}>video editor</span>
-              <span className={styles.pill}>graphic designer</span>
+              <span className={styles.pill}>youtube editing</span>
+              <span className={styles.pill}>shorts editing</span>
+              <span className={styles.pill}>vlog editing</span>
+              <span className={styles.pill}>next.js</span>
+              <span className={styles.pill}>typescript</span>
             </div>
             <div>
               <h1
@@ -689,8 +684,9 @@ export default function Home() {
                 data-scroll-speed=".06"
                 className="mt-1 max-w-lg tracking-tight text-muted-foreground 2xl:text-xl"
               >
-                An experienced graphic designer, video editor and full stack website developer
-                with a passion for crafting unique digital experiences.
+                An experienced graphic designer, video editor and full stack
+                website developer with a passion for crafting unique digital
+                experiences.
               </p>
             </div>
             <span
@@ -755,8 +751,8 @@ export default function Home() {
               developer. My experience spans startups to mid-sized companies,
               where I’ve contributed to the entire product creation process from
               ideation and wireframing, through prototyping, to delivering the
-              final product while efficiently collaborating with
-              cross functional teams.
+              final product while efficiently collaborating with cross
+              functional teams.
             </h2>
             <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
               {aboutStats.map((stat) => (
@@ -931,6 +927,62 @@ export default function Home() {
                         <CardHeader className="p-0">
                           <Link href={project.href} target="_blank" passHref>
                             {project.image.endsWith(".webm") ? (
+                              <video
+                                src={project.image}
+                                autoPlay
+                                loop
+                                muted
+                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                              />
+                            ) : (
+                              <Image
+                                src={project.image}
+                                alt={project.title}
+                                width={600}
+                                height={300}
+                                quality={100}
+                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                              />
+                            )}
+                          </Link>
+                        </CardHeader>
+                        <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
+                          <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
+                            {project.description}
+                          </CardTitle>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+              <div className="py-2 text-center text-sm text-muted-foreground">
+                <span className="font-semibold">
+                  {current} / {count}
+                </span>{" "}
+                projects
+              </div>
+            </div>
+
+             <h2 className="mt-3 text-2xl font-semibold tracking-tight tracking-tighter xl:text-4xl">
+              IRL Vlog Videos
+            </h2>
+            <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
+              create engaging and high-impact IRL vlog videos that
+              tell compelling stories and enhance digital media presence. Here
+              are some of my favorite IRL vlog projects.
+            </p>
+            <div className="mt-4">
+              <Carousel setApi={setCarouselApi} className="w-full">
+                <CarouselContent>
+                  {vlogProjects.map((project) => (
+                    <CarouselItem key={project.title} className="md:basis-1/2">
+                      <Card id="tilt">
+                        <CardHeader className="p-0">
+                          <Link href={project.href} target="_blank" passHref>
+                            {project.image.endsWith(".mp4") ? (
                               <video
                                 src={project.image}
                                 autoPlay
@@ -1653,8 +1705,7 @@ export default function Home() {
                           )}
                         </CardHeader>
                         <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
-                          <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
-                          </CardTitle>
+                          <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter"></CardTitle>
                         </CardContent>
                       </Card>
                     </CarouselItem>
