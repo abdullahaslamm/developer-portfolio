@@ -28,7 +28,7 @@ export default function Footer() {
       <div className="container mx-auto flex flex-row items-center justify-between py-6">
         <span className="flex flex-row items-center space-x-4">
           <p className="text-xs text-muted-foreground">
-            Made with ❤️ by{" "}
+            Made with by{" "}
             <Link
               href="https://discord.com/users/428013748847116289"
               target="_blank"
